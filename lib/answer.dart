@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Answer extends StatelessWidget {
-  final String answerList;
-  final VoidCallback changeQuestion;
-  Answer(this.answerList, this.changeQuestion);
+class Answers extends StatelessWidget {
+  final VoidCallback selectHandler;
+  final answerText;
+
+  Answers(this.selectHandler, this.answerText);
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Center(
-      child: Container(
-        width: double.infinity,
-        margin: EdgeInsets.all(5),
-        child: RaisedButton(
-          color: Colors.black,
-          child: Text(
-            answerList,
-            style: TextStyle(fontSize: 20, color: Colors.white),
-          ),
-          onPressed: changeQuestion,
-        ),
-      ),
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.all(5),
+      child: RaisedButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          child: Text(answerText),
+          onPressed: selectHandler),
     );
   }
 }
